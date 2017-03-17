@@ -1,10 +1,113 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Container class="javax.swing.JDialog" name="about">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="235" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="530" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="416" max="-2" attributes="0"/>
+                  <EmptySpace pref="26" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="About"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="jTextArea1">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="rows" type="int" value="5"/>
+                <Property name="text" type="java.lang.String" value="El pa&#xed;s consta de varios tipos de Hadas, todas ellas con Nombre, Altura (menor o igual a 15cm), &#xa;Edad, Salud, y Poder. El pa&#xed;s de nunca jam&#xe1;s es casa para diversos tipos de Hadas de las cuales &#xa;hemos logrado obtener informaci&#xf3;n de las siguientes:  &#xa;Lamias, Hijas de Zeus y semejantes a las Sirenas. Estas tienen una Aleta (longitud menor o igual &#xa;a 5cm), un n&#xfa;mero de branquias (no m&#xe1;s de 8), una salud de 475.0 y su poder consta de atrapar &#xa;a sus enemigos con su canto, da&#xf1;&#xe1;ndolos 57.0 puntos. &#xa;Hamadriades, Ninfas ligadas a un &#xe1;rbol concreto de tal modo que si &#xe9;ste era cortado, la ninfa &#xa;mor&#xed;a con &#xe9;l. Estas tienen una salud de 373.0, el poder la naturaleza que da&#xf1;a 78.0 puntos, un &#xa;&#xe1;rbol que representa una salud extra de 173.0 por lo que mueren hasta que su &#xe1;rbol muere as&#xed; &#xa;que despu&#xe9;s que la salud de la Hamadriade llegue a 0, empezara a bajar la salud de su &#xe1;rbol. &#xa;S&#xed;lfides, hadas de los vientos; Paracelso es el primero en citarlas, y son, seg&#xfa;n &#xe9;l, los seres &#xa;elementales del aire. Estas tienen salud de 563.0, Alas (no menos de 6), y el poder de lanzar &#xa;tornados desde sus manos los cuales da&#xf1;an por 67.0 puntos. &#xa;Salamandras, Arist&#xf3;teles asociaba a la salamandra con el fuego proclam&#xe1;ndolas las hadas del &#xa;fuego. Estas tienen Alas (no menos de 16), una salud de 683.0, tiene la capacidad de convertirse &#xa;en un f&#xe9;nix por lo que hacen un da&#xf1;o de 71.0 puntos. &#xa; Laboratorio No. 7 Programaci&#xf3;n II &#xa;Las Salamandras influyen un da&#xf1;o extra a las Hamadriades, les influye un 37% m&#xe1;s de da&#xf1;o. &#xa;Las Lamias y S&#xed;lfides influyen un da&#xf1;o extra a las Salamandras, les influye un 42% y 37% m&#xe1;s de &#xa;da&#xf1;o respectivamente. &#xa;Las Hadas deben poder ser agregadas, modificadas (en su totalidad) y eliminadas. &#xa;Debe existir una secci&#xf3;n en la que las Hadas pueden luchar entre ellas en tiempo real, esta &#xa;secci&#xf3;n constara de 2 Barras de progreso y un bot&#xf3;n, al presionar el bot&#xf3;n el usuario podr&#xe1; elegir &#xa;las 2 Hadas que participaran en la pelea ilegal. &#xa;Finalmente, el sistema deber&#xe1; tener las siguientes opciones en una barra de men&#xfa; (cada una con &#xa;Shortcut): "/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+      <SubComponents>
+        <Menu class="javax.swing.JMenu" name="jMenu1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Mi menu"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Abrir"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Guardar"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Guardar como"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="About"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem4ActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Salir"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem5ActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu2">
+        </Menu>
+      </SubComponents>
+    </Menu>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
   <SyntheticProperties>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
@@ -23,12 +126,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="784" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="367" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>

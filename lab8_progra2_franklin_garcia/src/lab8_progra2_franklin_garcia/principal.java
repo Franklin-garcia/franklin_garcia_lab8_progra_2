@@ -27,21 +27,108 @@ public class principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        about = new javax.swing.JDialog();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+
+        jLabel1.setText("About");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("El país consta de varios tipos de Hadas, todas ellas con Nombre, Altura (menor o igual a 15cm), \nEdad, Salud, y Poder. El país de nunca jamás es casa para diversos tipos de Hadas de las cuales \nhemos logrado obtener información de las siguientes:  \nLamias, Hijas de Zeus y semejantes a las Sirenas. Estas tienen una Aleta (longitud menor o igual \na 5cm), un número de branquias (no más de 8), una salud de 475.0 y su poder consta de atrapar \na sus enemigos con su canto, dañándolos 57.0 puntos. \nHamadriades, Ninfas ligadas a un árbol concreto de tal modo que si éste era cortado, la ninfa \nmoría con él. Estas tienen una salud de 373.0, el poder la naturaleza que daña 78.0 puntos, un \nárbol que representa una salud extra de 173.0 por lo que mueren hasta que su árbol muere así \nque después que la salud de la Hamadriade llegue a 0, empezara a bajar la salud de su árbol. \nSílfides, hadas de los vientos; Paracelso es el primero en citarlas, y son, según él, los seres \nelementales del aire. Estas tienen salud de 563.0, Alas (no menos de 6), y el poder de lanzar \ntornados desde sus manos los cuales dañan por 67.0 puntos. \nSalamandras, Aristóteles asociaba a la salamandra con el fuego proclamándolas las hadas del \nfuego. Estas tienen Alas (no menos de 16), una salud de 683.0, tiene la capacidad de convertirse \nen un fénix por lo que hacen un daño de 71.0 puntos. \n Laboratorio No. 7 Programación II \nLas Salamandras influyen un daño extra a las Hamadriades, les influye un 37% más de daño. \nLas Lamias y Sílfides influyen un daño extra a las Salamandras, les influye un 42% y 37% más de \ndaño respectivamente. \nLas Hadas deben poder ser agregadas, modificadas (en su totalidad) y eliminadas. \nDebe existir una sección en la que las Hadas pueden luchar entre ellas en tiempo real, esta \nsección constara de 2 Barras de progreso y un botón, al presionar el botón el usuario podrá elegir \nlas 2 Hadas que participaran en la pelea ilegal. \nFinalmente, el sistema deberá tener las siguientes opciones en una barra de menú (cada una con \nShortcut): ");
+        jScrollPane1.setViewportView(jTextArea1);
+
+        javax.swing.GroupLayout aboutLayout = new javax.swing.GroupLayout(about.getContentPane());
+        about.getContentPane().setLayout(aboutLayout);
+        aboutLayout.setHorizontalGroup(
+            aboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(aboutLayout.createSequentialGroup()
+                .addGroup(aboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(aboutLayout.createSequentialGroup()
+                        .addGap(235, 235, 235)
+                        .addComponent(jLabel1))
+                    .addGroup(aboutLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        aboutLayout.setVerticalGroup(
+            aboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(aboutLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jMenu1.setText("Mi menu");
+
+        jMenuItem1.setText("Abrir");
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Guardar");
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setText("Guardar como");
+        jMenu1.add(jMenuItem3);
+
+        jMenuItem4.setText("About");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem4);
+
+        jMenuItem5.setText("Salir");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem5);
+
+        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 784, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 367, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        System.exit(0); 
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        about.setModal(true);
+        about.pack();
+        about.setLocationRelativeTo(this);
+        about.setVisible(true); 
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +166,17 @@ public class principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog about;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
