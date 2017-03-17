@@ -5,18 +5,19 @@
  */
 package lab8_progra2_franklin_garcia;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Franklin Garcia
  */
-public abstract class hadas implements comportamiento{
-//Nombre, Altura (menor o igual a 15cm), 
-//Edad, Salud, y Poder.     
-private String nombre;
-private int altura;
-private int edad;
-private int salud;
-private int poder;
+public abstract class hadas implements comportamiento,Serializable {
+     
+protected String nombre;
+protected int altura;
+protected int edad;
+protected int salud;
+protected int poder;
 
 private static final long SerialVersionUID = 777L;
     public hadas() {
@@ -74,5 +75,8 @@ private static final long SerialVersionUID = 777L;
     public String toString() {
         return nombre;
     }
-public abstract void atacar();
+
+    @Override
+    public abstract void atacar();
+    
 }
