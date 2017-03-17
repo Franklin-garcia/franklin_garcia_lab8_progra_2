@@ -9,7 +9,11 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -58,6 +62,7 @@ public class principal extends javax.swing.JFrame {
         tf_nombre = new javax.swing.JTextField();
         sp_altura = new javax.swing.JSpinner();
         sp_edad = new javax.swing.JSpinner();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -233,6 +238,13 @@ public class principal extends javax.swing.JFrame {
 
         sp_altura.setModel(new javax.swing.SpinnerNumberModel(15, null, 15, 1));
 
+        jButton1.setText("Agregar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
         jMenu1.setText("Mi menu");
 
         jMenuItem1.setText("Abrir");
@@ -275,16 +287,21 @@ public class principal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sp_altura, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sp_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sp_altura, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sp_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
                 .addComponent(tab_hadas, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -304,6 +321,8 @@ public class principal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(sp_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(83, 83, 83)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -345,40 +364,92 @@ public class principal extends javax.swing.JFrame {
         nombre = tf_nombre.getText();
         altura = (Integer) sp_altura.getValue();
         edad = (Integer) sp_edad.getValue();
-        File dir = null;
+        File dir=null;
         if (tab_hadas.getSelectedIndex() == 0) {
+            //
             JFileChooser filechooser = new JFileChooser();
             int seleccion = filechooser.showSaveDialog(this);
             if (seleccion == JFileChooser.APPROVE_OPTION) {
-                 dir = filechooser.getSelectedFile();
+                dir = filechooser.getSelectedFile();
             }
+            //
+            salud = 475;
+            poder = 57;
+            tamaño_aleta = (Integer) sp_long_aleta.getValue();
+            branquias = (Integer) sp_no_branquias.getValue();
+            hadas lamias = new lamias(tamaño_aleta, branquias, nombre, altura, edad, salud, poder);
+            
+            adminHadas ah = new adminHadas(dir.getAbsolutePath());
+            ah.cargarArchivo();
+            ah.setGuerrero(lamias);
+            ah.escribirArchivo();
+        } else if (tab_hadas.getSelectedIndex() == 1) {
+            salud = 373;
+            poder = 78;            poder_extra = 173;
+            hadas hamadriades = new hamadriades(poder_extra, nombre, altura, edad, salud, poder);
+        } else if (tab_hadas.getSelectedIndex() == 2) {
+            salud = 563;
+            poder = 67;
+            numero_alas = (Integer) sp_no_alas_silfides.getValue();
+            hadas silfides = new silfides(numero_alas, nombre, altura, edad, salud, poder);
+        } else if (tab_hadas.getSelectedIndex() == 3) {
+            salud = 683;
+            poder = 71;
+            numero_alas = (Integer) sp_no_alas_salamandras.getValue();
+
+        }
+
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        String nombre;
+        int altura;
+        int edad;
+
+        int salud;
+        int poder;
+
+        int tamaño_aleta;
+        int branquias;
+        int numero_alas;
+        int poder_extra;
+
+        nombre = tf_nombre.getText();
+        altura = (Integer) sp_altura.getValue();
+        edad = (Integer) sp_edad.getValue();
+        File dir=null;
+        if (tab_hadas.getSelectedIndex() == 0) {
+            //
+            JFileChooser filechooser = new JFileChooser();
+            int seleccion = filechooser.showSaveDialog(this);
+            if (seleccion == JFileChooser.APPROVE_OPTION) {
+                dir = filechooser.getSelectedFile();
+            }
+                //
                 salud = 475;
                 poder = 57;
                 tamaño_aleta = (Integer) sp_long_aleta.getValue();
                 branquias = (Integer) sp_no_branquias.getValue();
-                hadas lamias = new lamias(tamaño_aleta, branquias, nombre, altura, edad, salud, poder);
-                adminHadas ah = new adminHadas("dir");
-                ah.cargarArchivo();
-                ah.setGuerrero(lamias);
-                ah.escribirArchivo();
+                lista_hadas.add(new lamias(tamaño_aleta, branquias, nombre, altura, edad, salud, poder));
             } else if (tab_hadas.getSelectedIndex() == 1) {
                 salud = 373;
                 poder = 78;
                 poder_extra = 173;
-                hadas hamadriades = new hamadriades(poder_extra, nombre, altura, edad, salud, poder);
+                lista_hadas.add(new hamadriades(poder_extra, nombre, altura, edad, salud, poder));
             } else if (tab_hadas.getSelectedIndex() == 2) {
                 salud = 563;
                 poder = 67;
                 numero_alas = (Integer) sp_no_alas_silfides.getValue();
-                hadas silfides = new silfides(numero_alas, nombre, altura, edad, salud, poder);
+                lista_hadas.add(new silfides(numero_alas, nombre, altura, edad, salud, poder));
             } else if (tab_hadas.getSelectedIndex() == 3) {
                 salud = 683;
                 poder = 71;
                 numero_alas = (Integer) sp_no_alas_salamandras.getValue();
-
+                lista_hadas.add(new salamandras(numero_alas, nombre, altura, edad, salud, poder));
             }
+            JOptionPane.showMessageDialog(this, "Se agrego con exito");
 
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
          * @param args the command line arguments
@@ -417,6 +488,7 @@ public class principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog about;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -450,4 +522,5 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JTabbedPane tab_hadas;
     private javax.swing.JTextField tf_nombre;
     // End of variables declaration//GEN-END:variables
+ArrayList<hadas> lista_hadas = new ArrayList();
 }
